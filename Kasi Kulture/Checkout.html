@@ -1,0 +1,83 @@
+<!Doctype html>
+<html>
+<head>
+<title>Checkout</title>
+<link rel="stylesheet" href="css/styleO.css">
+
+</head>
+<body>
+<header>
+    <nav class="navbar">
+      <div class="logo"><img src="images/LG.PNG"
+	  style="width:80px;height:80px;"/>
+	  </div>
+
+            <div class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('show')">
+        <span></span>
+        <span></span>
+        <span></span>
+		
+      </div>
+
+            <div class="nav-links">
+        <a href="Home.html">Home Page</a>
+        <a href="About us.html">About us</a>
+		<a href="Product and services.html">Product and Services</a>
+        <a href="Contact us.html">Contact us</a>
+        <a href="News update.html">News update</a>
+		<a href="Checkout.html">Checkout</a>
+      </div>
+    </nav>
+  </header>
+<main>
+<h1><strong>Checkout Service</strong></h1>
+<h3><small><em>Kasi Authentic eatery </small></em></h3>
+
+<section id="order-details-summary">
+    <h2>Your Order Summary 🛒</h2>
+    <ul id="order-summary" style="color: black; list-style: none; padding: 0;"></ul>
+    <p id="order-total" style="font-weight: bold; font-size: 1.2em; color: black; border-top: 2px solid black; padding-top: 10px;"></p>
+</section>
+<div>
+  <label for ="Payment">Payment</label>
+  <select id="payment" name= "payment">
+    <option value ="visa"> visa</option>
+	<option value ="mastercard" >mastercard</option>
+	<option value ="cash">cash</option>
+	</select>
+	<h5><i>if payment is cash please select cash then pay at your arrival. THANK YOU!</i></h5>
+   <video width="100%"height="70%" autoplay muted loop playsinline>
+   <source src="images/Enjoy.mp4" type="video/mp4">
+</div>
+<div>
+ <details>
+   <summary><strong>Click here to enter card details</strong></summary>
+        <form style="color: black;">
+            <p>
+                <label for="name-on-card">Name:</label><br>
+                <input type="text" id="name-on-card" name="name-on-card">
+            </p>
+            <p>
+                <label for="card-number">Card number:</label><br>
+                <input type="tel" id="card-number" name="card-number">
+            </p>
+            <p>
+                <label for="cv-code">CV code:</label><br>
+                <input type="tel" id="cv-code" name="cv-code">
+            </p>
+        </form>
+		
+<button class="submit-button">Submit</button>
+
+<br>
+	</details>
+</div>
+<br>
+<p><big><strong><ins>SCREW THE DIET!</strong></ins></big></p>
+</main>
+<footer>
+<p style="color:red; background-color:black; padding: 15px 20px;">&copy;2025 ST10480535 Kasi Kulture</p>
+</footer>
+<script src="JavaScript/JCO.js"></script>
+</body>
+</html>

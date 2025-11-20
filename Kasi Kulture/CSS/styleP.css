@@ -1,0 +1,444 @@
+header {
+	background-color:black;
+}
+main {
+	 background-color: white;
+}
+h1{
+	color:black;	
+	margin-left: 700px;	
+	margin-bottom: 0;
+}
+h3{
+	color:black;	
+	margin-left: 700px;	
+	margin-top: 0;
+}
+
+@keyframes colorChange {
+	0% { color:black; } /* Start color */
+	25% { color: red; } /* First color stop */
+	50% { color: blue; } /* Second color stop */
+	75% { color: red; } /* Third color stop */
+	100% { color: black; } /* Back to the start color */
+}
+
+/* Applies to the H1 tag */
+.animated-heading {
+	animation: colorChange 6s infinite; /* animation-name duration iteration-count */
+}
+
+/* --- Wave Animation for H3 --- */
+@keyframes wave-animation {
+	/* Moves the element to the far left edge of the viewport */
+	0% {
+		transform: translateX(-50vw) rotateZ(0deg);	
+	}
+	25% {
+		transform: translateX(-40vw) rotateZ(-2deg);
+	}
+	50% {
+		/* Moves the element to the center of the viewport (or slightly offset) */
+		transform: translateX(0) rotateZ(0deg);	
+	}
+	75% {
+		transform: translateX(40vw) rotateZ(2deg);
+	}
+	/* Moves the element to the far right edge of the viewport */
+	100% {
+		transform: translateX(50vw) rotateZ(0deg);
+	}
+}
+
+.wave-text {
+	/* Use position: relative so its position can be offset by transform */
+	position: relative;	
+	/* Make the h3 take full width of its parent to enable far movement */
+	width: 100%;	
+	display: block;	
+	
+	animation: wave-animation 8s ease-in-out infinite alternate;	
+	/* Increased duration for smoother, slower movement */
+	/* 'alternate' makes it move back and forth between 0% and 100% states */
+}
+
+/* Media query to apply fixed margins on large desktops */
+@media (min-width: 1200px) {
+	h1, h3 {
+		align-self: flex-start; /* Aligns the items to the left */
+		margin-left: 700px; /* Applies the desired margin on wide screens */
+	}
+}
+
+/* Media query for smaller screens */
+@media (max-width: 1199px) {
+	h1, h3 {
+		align-self: center; /* Centers the items when the screen is smaller than 1200px */
+		margin-left: 0;
+		text-align: center; /* Ensures the text inside is centered as well */
+	}
+}
+
+/* Menu grid layout */
+.menu-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+	gap: 25px;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 20px;
+    
+    /* NEW: Center content in the grid, particularly for the buttons */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Individual menu item card */
+.menu-item {
+	background-color: #fff;
+	border-radius: 12px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+	padding: 20px;
+	text-align: center;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	/* Add cursor to indicate images are clickable */
+	cursor: pointer;
+}
+
+.menu-item:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.menu-item img {
+	width: 150px; /* Fixed size for a uniform look */
+	height: 150px;
+	object-fit: cover;
+	border-radius: 50%; /* Makes the images circular */
+	border: 3px solid #eee;
+}
+
+/* Item details and pricing */
+.item-details {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 15px;
+}
+
+.item-price {
+	font-size: 1.5rem;
+	font-weight: bold;
+	color: black;
+	margin-right: 10px;
+}
+
+/* Hide the default radio/checkbox button */
+input[type="checkbox"] { /* TARGETING CHECKBOXES NOW */
+	display: none;
+}
+input[type="radio"] { /* KEEPING radio hidden if any remain */
+    display: none;
+}
+
+/* Style the custom label to look like a button */
+.menu-item label {
+	display: inline-block;
+	width: 25px; /* Slightly larger checkbox style */
+	height: 25px; /* Slightly larger checkbox style */
+	border: 3px solid #ccc; /* Thicker border */
+	border-radius: 4px; /* Changed from 50% for a square/checkbox look */
+	cursor: pointer;
+	transition: border-color 0.3s ease, background-color 0.3s ease;
+    margin-left: 10px; /* Space between price and checkbox */
+}
+
+input[type="checkbox"]:checked + label { /* TARGETING CHECKBOXES NOW */
+	border-color: #FF0000; /* Use red for checked */
+	background-color: #FF0000;
+    /* Optional: Add a simple checkmark effect */
+    position: relative;
+}
+input[type="checkbox"]:checked + label::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Item description */
+.item-description {
+	font-size: 0.85rem;
+	color: #555;
+	margin-top: 10px;
+	min-height: 40px; /* Ensures consistent spacing for descriptions */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+
+/* Nav bar */
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem 2rem;
+}
+
+.navbar .logo {
+	font-size: 1.5rem;
+	font-weight: bold;
+}
+
+.nav-links {
+	display: flex;
+	gap: 1rem;
+}
+
+.nav-links a {
+	/* Base button styles */
+	color: white;
+	text-decoration: none;
+	font-weight: 500;
+	transition: all 0.3s ease-in-out;
+	padding: 0.75rem 1.5rem;
+	border-radius: 0.5rem;
+	background-color: var(--primary-color);
+	border: 1px solid red;
+}
+
+.nav-links a:hover {
+	color: white;
+	background-color: var(--hover-color);
+	transform: translateY(-2px); /* A subtle lift on hover */
+	box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+	border: 1px solid darkred;
+}
+
+/* Hamburger menu (hidden on desktop) */
+.hamburger {
+	display: none;
+	flex-direction: column;
+	cursor: pointer;
+}
+
+.hamburger span {
+	height: 3px;
+	width: 25px;
+	background: white;
+	margin: 4px 0;
+	transition: 0.4s;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+	.nav-links {
+		position: absolute;
+		top: 70px;
+		left: 0;
+		width: 100%;
+		background-color: #333;
+		flex-direction: column;
+		align-items: center;
+		display: none;
+	}
+
+	.nav-links a {
+		padding: 1rem 0;
+		width: 100%;
+		text-align: center;
+		border-top: 1px solid #444;
+		/* Revert styles for mobile view */
+		background-color: transparent;
+		border-radius: 0;
+		transform: none;
+		box-shadow: none;
+		color: white;
+	}
+
+	.nav-links a:hover {
+		background-color: #444;
+	}
+
+	.nav-links.show {
+		display: flex;
+	}
+
+	.hamburger {
+		display: flex;
+	}
+}
+
+/* Download Button Styling */
+.download-button {
+	display: block; /* Make it take up full width of its grid cell */
+    grid-column: 1 / -1; /* Make it span all columns */
+    text-align: center; /* Center the text inside the anchor tag */
+	background-color: #000;
+	color: #FF0000;
+	padding: 12px 25px;
+	border-radius: 8px;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 1.1rem;
+	margin-top: 20px;
+	margin-bottom: 20px;	/* Reduced margin to separate from new button */
+	transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+	border: 2px solid #FF0000;
+    width: fit-content; /* Ensure button only takes width of content */
+    margin-left: auto; /* Center the button */
+    margin-right: auto; /* Center the button */
+}
+
+.download-button:hover {
+	background-color: #FF0000; /* Invert colors on hover */
+	color: #000; /* Black text on hover */
+	transform: translateY(-2px); /* Slight lift effect */
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Add To Order Button Styling (New/Updated) */
+#addToOrder {
+    display: block; /* Make it take up full width of its grid cell */
+    grid-column: 1 / -1; /* Make it span all columns */
+    text-align: center;
+    cursor: pointer;
+    
+    /* Main Styles */
+    background-color: #FF0000; /* Prominent red background */
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.3);
+
+    width: fit-content; 
+    margin-left: auto; 
+    margin-right: auto; 
+}
+
+#addToOrder:hover:not([disabled]) {
+    background-color: darkred;
+    transform: translateY(-2px);
+    box-shadow: 0 7px 20px rgba(255, 0, 0, 0.5);
+}
+
+#addToOrder[disabled] {
+    background-color: #ccc; /* Grayed out when disabled */
+    color: #666;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* --- Lightbox Styles --- */
+.lightbox {
+    /* Hidden by default, activated by JS */
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Dark semi-transparent overlay */
+    background-color: rgba(0, 0, 0, 0.9); 
+    z-index: 9999; /* Ensure it's on top of everything */
+    /* Center the content */
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#lightbox-img {
+    /* Set max sizes to keep image contained */
+    max-width: 100%; 
+    max-height: 80vh; 
+    display: block;
+    object-fit: contain; /* Ensures the whole image is visible */
+    border-radius: 5px;
+}
+
+.lightbox-caption {
+    color: white;
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    max-width: 80vw;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+    z-index: 10000;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+}
+
+.close-btn:hover {
+    opacity: 1;
+}
+
+.prev-btn, .next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 3rem;
+    cursor: pointer;
+    background: rgba(0,0,0,0.4);
+    border: none;
+    padding: 10px 15px;
+    user-select: none;
+    transition: background 0.2s;
+    z-index: 10000;
+}
+
+.prev-btn:hover, .next-btn:hover {
+    background: rgba(0,0,0,0.7);
+}
+
+.prev-btn { left: 20px; border-radius: 5px 0 0 5px;}
+.next-btn { right: 20px; border-radius: 0 5px 5px 0;}
+
+/* --- Menu Item Layout (Overwriting/refining existing styles) --- */
+.menu-item {
+    padding: 20px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column; /* Changed to column for better responsiveness in the cards */
+    align-items: center;
+    gap: 10px;
+    max-width: 400px; /* Constrain for better presentation */
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer; 
+}
+.menu-item img {
+    transition: transform 0.3s;
+}
+.menu-item:hover img {
+    transform: scale(1.05);
+}

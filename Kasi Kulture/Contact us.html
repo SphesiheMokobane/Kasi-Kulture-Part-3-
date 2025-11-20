@@ -1,0 +1,109 @@
+<!Doctype html>
+<html>
+<head>
+<title>Contact us</title>
+<link rel="stylesheet" href="css/styleC.css">
+</head>
+<body>
+<header>
+    <nav class="navbar">
+      <div class="logo"><img src="images/LG.PNG"
+	  style="width:80px;height:80px;"/>
+	  </div>
+
+      <!-- Hamburger for mobile -->
+      <div class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('show')">
+        <span></span>
+        <span></span>
+        <span></span>
+		
+      </div>
+
+      <!-- Navigation links -->
+      <div class="nav-links">
+        <a href="Home.html">Home Page</a>
+        <a href="About us.html">About us</a>
+		<a href="Product and services.html">Product and Services</a>
+        <a href="Contact us.html">Contact us</a>
+        <a href="News update.html">News update</a>
+      </div>
+    </nav>
+  </header>
+<main class="contact-page-layout">
+    
+    <section class="contact-info">
+    
+
+        <div class="contact-details">
+            <div class="contact-item">
+                <i class="icon email-icon">📧</i>
+                <div class="detail-text">
+                    <p class="detail-label">Email Us</p>
+                    <p class="detail-value">authentic@KasiKulture.com</p>
+                </div>
+            </div>
+            <div class="contact-item">
+                <i class="icon phone-icon">📞</i>
+                <div class="detail-text">
+                    <p class="detail-label">Call Us</p>
+                    <p class="detail-value">+27 82 578 619</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="location-card">
+            <i class="map-pin">📍</i>
+            <div class="address-box">
+                <p>4697 Isikalu Street</p>
+                <p>Birch Acres Ext 27</p>
+                <p>1618</p>
+            </div>
+            <div class="map-placeholder">
+                <p>Map Placeholder</p>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="contact-form">
+        <h2 class="form-title">Get In Touch With Us TODAY</h2>
+        <form action="#" method="POST">
+            
+            <label for="name">Name *</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required>
+            
+            <div class="split-fields">
+                <div class="field-group">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+27" required>
+                </div>
+                <div class="field-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject">
+                </div>
+            </div>
+
+            <label for="inquiry-type">Inquiry Type *</label>
+            <select id="inquiry-type" name="inquiry-type" required>
+                <option value="General">General</option>
+                <option value="Job">Job</option>
+                <option value="Complain">Complain</option>
+                <option value="Feedback">Feedback</option>
+            </select>
+            
+            <label for="message">Message *</label>
+            <textarea id="message" name="message" rows="6" required></textarea>
+
+            <button type="submit" class="submit-button">SUBMIT</button>
+        </form>
+    </section>
+</main>
+<footer>
+<p style="color:red">&copy;2025 ST10480535 Kasi Kulture</p>
+</footer>
+<script src="JavaScript/JC.js"></script>
+</body>
+</html>
